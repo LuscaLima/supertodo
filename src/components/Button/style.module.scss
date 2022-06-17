@@ -1,0 +1,46 @@
+@use '@/scss/colors' as c;
+
+.button {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  color: c.$white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: c.$blue;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: darken(c.$blue, 5);
+  }
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+
+    &,
+    &:hover {
+      background-color: desaturate(c.$blue, 30);
+    }
+  }
+
+  &.link {
+    padding: unset;
+    background-color: transparent;
+
+    &:hover {
+      color: c.$blue;
+    }
+  }
+
+  &.rounded {
+    border-radius: 9999px;
+  }
+
+  &.secondary {
+    background-color: c.$gray-600;
+  }
+}

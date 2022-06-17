@@ -1,0 +1,31 @@
+@use '@/scss/colors' as c;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+
+  .label {
+    color: c.$gray-800;
+  }
+
+  .text {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: c.$gray-800;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: lighten(c.$gray-100, 2.5);
+    transition: all 0.2s linear;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(c.$blue, 0.5);
+    }
+
+    &:disabled {
+      color: rgba(c.$gray-800, 0.7);
+      cursor: not-allowed;
+    }
+  }
+}

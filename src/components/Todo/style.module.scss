@@ -1,0 +1,60 @@
+@use '@/scss/colors' as c;
+
+.todo {
+  display: flex;
+  padding: 1.5rem;
+  border: 2px solid c.$gray-800;
+  border-radius: 1.5rem;
+  background-color: c.$gray-800;
+  transition: all 0.2s linear;
+
+  &:hover {
+    border-color: c.$blue;
+  }
+
+  .state {
+    display: flex;
+    margin-right: 1.5rem;
+
+    .check {
+      $size: 1.75rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $size;
+      height: $size;
+      font-size: 1.25rem;
+      border: 2px solid c.$blue;
+      border-radius: $size;
+
+      &.done {
+        background-color: c.$blue;
+      }
+    }
+  }
+
+  .infos {
+    flex: 1;
+
+    &.done {
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+      opacity: 0.75;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-size: 1.25rem;
+      }
+    }
+
+    .content {
+      color: c.$gray-400;
+    }
+  }
+}

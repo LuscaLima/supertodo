@@ -1,0 +1,10 @@
+@use '@/scss/colors' as c;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  font-size: 0.9rem;
+  color: c.$gray-400;
+}

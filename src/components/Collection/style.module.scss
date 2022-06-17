@@ -1,0 +1,53 @@
+@use '@/scss/colors' as c;
+
+.card {
+  $size: 12.5rem;
+
+  display: flex;
+  flex-direction: column;
+  width: $size;
+  height: $size;
+  padding: 1.5rem;
+  border: 2px solid c.$gray-800;
+  border-radius: 2rem;
+  background-color: c.$gray-800;
+  transition: all 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    border-color: c.$blue;
+  }
+
+  .header {
+    display: flex;
+
+    .icon {
+      $size: 3rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $size;
+      height: $size;
+      font-size: 1.5rem;
+      border-radius: 1rem;
+      background-color: c.$blue;
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+
+    .title {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  .footer {
+    color: c.$gray-400;
+  }
+}

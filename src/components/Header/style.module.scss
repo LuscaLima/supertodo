@@ -1,0 +1,33 @@
+@use '@/scss/colors' as c;
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3.5rem;
+  padding: 0 1rem;
+  background-color: c.$gray-800;
+
+  .title {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-image: linear-gradient(
+      to right,
+      c.$pink,
+      c.$blue-light,
+      c.$blue
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media only screen and (max-width: 768px) {
+    $shift-x: 1rem;
+
+    & {
+      padding: 0 $shift-x;
+    }
+  }
+}

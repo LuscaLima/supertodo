@@ -1,0 +1,51 @@
+@use '@/scss/colors' as c;
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(c.$gray-700, 0.6);
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.modal {
+  width: 35rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: c.$white;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-size: 1.5rem;
+      color: c.$gray-800;
+    }
+
+    .close {
+      border: none;
+      background-color: transparent;
+      line-height: 1;
+      font-size: 1.25rem;
+    }
+  }
+
+  .content {
+    padding: 1rem 0;
+    color: c.$gray-800;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+}

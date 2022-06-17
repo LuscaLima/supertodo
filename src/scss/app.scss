@@ -1,0 +1,84 @@
+@use '@/scss/colors' as c;
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  flex: 1;
+  width: 39.5rem;
+  margin: 0 auto;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+
+    h2 {
+      font-size: 1.5rem;
+
+      svg {
+        margin-right: 0.5rem;
+        margin-bottom: -0.25rem;
+      }
+
+      strong {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .todos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem;
+    border-radius: 2rem;
+    background-color: rgba(c.$gray-800, 0.2);
+
+    img {
+      width: 7rem;
+    }
+
+    strong {
+      font-size: 1.35rem;
+    }
+  }
+
+  .new-collection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6.25rem;
+    font-size: 1.5rem;
+    color: c.$gray-600;
+    border: 2px solid c.$gray-700;
+    border-radius: 2rem;
+    transition: all 0.2s linear;
+    cursor: pointer;
+
+    &:hover {
+      color: c.$gray-400;
+      border-color: c.$gray-600;
+      background-color: rgba(c.$gray-700, 0.2);
+    }
+  }
+}
