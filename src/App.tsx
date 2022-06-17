@@ -16,7 +16,7 @@ import noDataImage from '@/assets/img/no_data.svg'
 
 const ls = localStorage
 
-function App() {
+export default function App() {
   const INITIAL_COLLECTION = {} as CollectionData
   const INITAL_DELETE_CLOUSE = () => () => {}
   const fixedCollection: CollectionData = {
@@ -157,9 +157,7 @@ function App() {
   }
 
   useEffect(() => {
-    const persistedCollections = JSON.parse(
-      ls.getItem('collections') ?? '[]'
-    ) as []
+    const persistedCollections = JSON.parse(ls.getItem('collections') ?? '[]')
     const persistedTodos = JSON.parse(ls.getItem('todos') ?? '{}')
 
     if (!persistedCollections.length) {
@@ -172,7 +170,7 @@ function App() {
 
   const isCollectionSelected = !!Object.keys(selectedCollection).length
   const [generalCollection, ...allCollections] = collections
-  const allTodos = todos[selectedCollection?.id] ?? []
+  const allTodos = todos[selectedCollection.id] ?? []
 
   return (
     <>
@@ -303,5 +301,3 @@ function App() {
     </>
   )
 }
-
-export default App
