@@ -172,7 +172,7 @@ function App() {
 
   const isCollectionSelected = !!Object.keys(selectedCollection).length
   const [generalCollection, ...allCollections] = collections
-  const allTodos = todos[selectedCollection.id] ?? []
+  const allTodos = todos[selectedCollection?.id] ?? []
 
   return (
     <>
