@@ -157,11 +157,14 @@ export default function App() {
   }
 
   useEffect(() => {
-    const persistedCollections = JSON.parse(ls.getItem('collections') ?? '[]')
+    let persistedCollections = JSON.parse(ls.getItem('collections') ?? '[]')
     const persistedTodos = JSON.parse(ls.getItem('todos') ?? '{}')
+
+    console.log(persistedCollections, persistedTodos)
 
     if (!persistedCollections.length) {
       ls.setItem('collections', JSON.stringify(collections))
+      persistedCollections = JSON.parse(ls.getItem('collections')!)
     }
 
     setCollections(persistedCollections)
